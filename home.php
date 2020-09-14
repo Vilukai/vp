@@ -1,6 +1,7 @@
 <?php
 $username = "Kai Vilu";
 $fulltimenow = date("d.m.Y H:i:s");
+$clocknow = date("H:i");
 $hournow = date("H");
 $partofday = "lihtsalt aeg"; 
 if($hournow < 7){
@@ -9,6 +10,22 @@ $partofday = "uneaeg";
 if($hournow >= 8 and $hournow < 18){
 	$partofday= "akadeemilise aktiivsuse aeg";
 }
+if($hournow >=10 and $clocknow < 11.30) {
+	$partofday= "hommikune toiduaeg";
+}
+if ($hournow >=19 and $hournow < 21){
+	$partofday="koju sõidu aeg";
+}
+if ($hournow >= 16 and $hournow < 17) {
+	$partofday= "õhtusöögiaeg";
+}
+if ($hournow >= 6 and $hournow < 8 ) {
+	$partofday= "kooli sõidu aeg"; 
+}
+if ($clocknow > 5.30 and $clocknow < 5.45) {
+	$partofday= "peldiku aeg";
+}
+
 
 //vaatame semestri kulgu
 $semesterstart = new DateTime("2020-8-31");
